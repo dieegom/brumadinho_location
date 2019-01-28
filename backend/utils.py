@@ -1,42 +1,40 @@
 import numpy as np
 from scipy import interpolate
 
-x = np.linspace(-20.139558, -20.115769, 1000)
-y = np.linspace(-44.141856, -44.099738, 1000)
-z = np.array([100.0, 50.0, 50.0, 25, 100.0])
-barragem = [-20.119026, -44.119985]
-X, Y = np.meshgrid(x, y)
-npts = 5
-px, py = np.random.choice(x, npts), np.random.choice(y, npts)
+X = np.linspace(-20.139558, -20.115769, 1000)
+Y = np.linspace(-44.141856, -44.099738, 1000)
+Z = np.array([100.0, 50.0, 50.0, 25, 100.0])
 
-x_points = np.array([-20.115769, -20.115769, -20.129558, -20.129558])
-y_points = np.array([-44.141856, -44.119738, -44.141856, -44.119738])
+DAM = [-20.119026, -44.119985]
+X, Y = np.meshgrid(X, Y)
 
-z1 = np.array([np.random.random() * 100 for x, y in zip(x_points,
-                                                        y_points)])
-z2 = interpolate.griddata((x_points, y_points), z1, (X, Y),
-                          method='nearest')
-# print(z2)
+NPTS = 5
+PX, PY = np.random.choice(X, NPTS), np.random.choice(Y, NPTS)
 
-mapa = [(x, y, z) for x, y, z in zip(X, Y, z2)]
+X_POINTS = np.array([-20.115769, -20.115769, -20.129558, -20.129558])
+Y_POINTS = np.array([-44.141856, -44.119738, -44.141856, -44.119738])
+
+Z1 = np.array([np.random.random() * 100 for X, Y in zip(X_POINTS, Y_POINTS)])
+Z2 = interpolate.griddata((X_POINTS, Y_POINTS), Z1, (X, Y), method='nearest')
+
+MAP = [(X, Y, Z) for X, Y, Z in zip(X, Y, Z2)]
 
 
 class Position:
-    def __init__(self, lat, lng):
+    def __init__(self, lat: float, lng: float):
         self.lat = lat
         self.lng = lng
 
     def calc_vector(self):
-        v_pos_x, v_pos_y = (self.lat - barragem[0], self.lng - barragem[1])
+        v_pos_x, v_pos_y = (self.lat - DAM[0], self.lng - DAM[1])
         d = np.sqrt((v_pos_x ** 2 + v_pos_y ** 2))
+
         print(v_pos_x, v_pos_y, d)
+
         xf = self.lat + v_pos_x
         yf = self.lng + v_pos_y
+
         return xf, yf
-
-
-def height(x, y):
-    return 100
 
 
 def return_vector(request_latitude, request_longitude):

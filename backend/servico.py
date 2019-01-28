@@ -18,7 +18,7 @@ class Handler(BaseHTTPRequestHandler):
         json_data = self.rfile.read(int(self.headers['Content-Length']))
 
         geo_point = json.loads(json_data)
-        lat, lng = geo_point.get('lat',None), geo_point.get('lng', None)
+        lat, lng = geo_point.get('lat', None), geo_point.get('lng', None)
         position = return_vector(lat, lng)
         if position:
             response = {
