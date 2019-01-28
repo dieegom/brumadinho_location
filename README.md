@@ -16,8 +16,6 @@ Pedimos aos Devs que façam seus Pull Requests para que possamos deixar este alg
 
 
 Vamos todos fazer a nossa parte! Isto pode ser útil no futuro também.
-Obrigado.
-
 
 ## English
 We created a first version of a tool to put latitude and longitude of missing persons and, based on the tailings flow, estimate the possible location of the person.
