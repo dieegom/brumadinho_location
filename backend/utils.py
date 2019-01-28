@@ -1,7 +1,6 @@
 import numpy as np
 from scipy import interpolate
 
-# todo: rename variables to more explicit name
 
 X = np.linspace(-20.139558, -20.115769, 1000)
 Y = np.linspace(-44.141856, -44.099738, 1000)

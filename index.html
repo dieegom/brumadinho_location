@@ -52,7 +52,7 @@
                        id="lng" value="-44.123509">
                 <div class="input-group-append" id="button-addon4">
                     <button class="btn btn-primary" type="button"
-                            onclick="calculate()">Calcular
+                            onclick="calculate()">Calculate
                     </button>
                 </div>
             </div>
@@ -86,8 +86,8 @@
     }
 
     function drawVector(pointA, pointB) {
-        createMarker('Localização inicial', pointA);
-        createMarker('Localização final (estimada)', pointB);
+        createMarker('Initial Location', pointA);
+        createMarker('Estimated Final Location', pointB);
 
         const line = new L.Polyline([pointA, pointB], {
             color: 'red',
