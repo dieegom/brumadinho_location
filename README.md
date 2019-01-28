@@ -1,4 +1,4 @@
-# brumadinho_location
+# Brumadinho Location
 Criamos uma primeira versão de uma ferramenta para colocar latitude e longitude dos desaparecidos e, com base no fluxo de rejeitos, estimar a possível localização da pessoa. 
 
 O algoritmo precisa ser melhorado (e muito) ainda. Além disso, fizemos apenas com os poucos dados que obtivemos. Ideal seria termos dados físico-químicos do rejeito, mapa topográfico (em .csv) do local, simulações do rejeito se espalhando e, claro, latitude e longitude dos celulares.
@@ -30,7 +30,7 @@ We will leave the system up to date running at: `http://18.218.138.85`
 
 We ask the Devs to make their Pull Requests so we can make this algorithm more robust and available to those responsible for the rescue. Fork it now! We will continue to improve the code throughout the week.
 
-#### Ideas to be implemented:
+### Ideas to be implemented:
 * http://fluidityproject.github.io/
 * http://lorenabarba.com/blog/cfd-python-12-steps-to-navier-stokes/
 * https://en.wikipedia.org/wiki/Nevier-Stokes_Equa%C3%B5es_of_Navier
