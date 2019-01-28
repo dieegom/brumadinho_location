@@ -1,0 +1,8 @@
+- Modify parameters in python script for reading the coordinates and run the script
+
+- Generates a script file for meshing in Gmsh and a txt file with the coordinates
+
+- The mesh can be produced by using the script file (.geo) in Gmsh:
+	gmsh scriptFile.geo -2 -o outMesh.msh
+
+  where '2' stands for a 2D mesh.
