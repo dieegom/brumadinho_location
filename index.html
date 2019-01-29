@@ -154,6 +154,16 @@
             layers: [satelliteLayer]
         });
 
+        var maker = null;
+
+        map.on("click", function(e){
+            if(maker != null) maker.remove();
+            document.getElementById("lat").value = e.latlng.lat;
+            document.getElementById("lng").value = e.latlng.lng;
+            var point = new L.LatLng(e.latlng.lat, e.latlng.lng);
+            maker = createMarker('local selecionado', point);
+        });
+
         const areaQuenteLayer = omnivore.kml('area_quente.kml').on(
             'ready', function () {
                 map.fitBounds(areaQuenteLayer.getBounds());
