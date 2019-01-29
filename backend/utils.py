@@ -1,5 +1,6 @@
 import numpy as np
 from scipy import interpolate
+import googlemaps
 
 x = np.linspace(-20.139558, -20.115769, 1000)
 y = np.linspace(-44.141856, -44.099738, 1000)
@@ -37,6 +38,14 @@ class Position:
 
 def height(x, y):
     return 100
+
+ 
+#return elevation of point
+def get_elevation(lat, lng):
+    APIKEY = 'AIzaSyAnbOJA6971Px1F20vqISnYFUyOJowplAc'
+    gmaps = googlemaps.Client(key=APIKEY)
+    geocode_result = gmaps.elevation((lat, lng))
+    return geocode_result[0]['elevation']
 
 
 def return_vector(request_latitude, request_longitude):
