@@ -18,6 +18,13 @@ Instale os requerimentos para o servidor funcionar (preferencialmente em um ambi
 
     pip install -r requirements.txt
 
+## configuração básica:
+
+    cp .env.template .env
+
+Criando a base de dados inicial
+
+    python manage.py migrate
 
 ## rodando local:
 
