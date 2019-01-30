@@ -16,7 +16,7 @@ import numpy as np
 from scipy.integrate import cumtrapz
 import utm
 
-# Initial position - Transfor Geo coords to UTM coords.
+# Initial position - Transform Geo coords to UTM coords.
 
 # If we need arrays: uncomment the next 3 lines and comment the next 2
     # some more changes are expected to be done to match the
@@ -68,7 +68,7 @@ positionX = cumtrapz(velocityX)
 # Integrate velocity to get y position
 positionY = cumtrapz(velocityY)
 
-# Insert initial position
+# Insert initial position 
 positionX = np.concatenate([[x0], positionX])
 positionY = np.concatenate([[y0], positionY])
 
