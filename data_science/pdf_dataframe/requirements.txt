@@ -1,0 +1,7 @@
+pillow
+pytesseract
+beautifulsoup4
+fuzzywuzzy
+python-Levenshtein
+natsort
+opencv-python
