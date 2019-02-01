@@ -1,3 +1,5 @@
 django==2.1.5
 djangorestframework==3.9.0
 python-decouple==3.1
+djangorestframework-gis==0.14
+psycopg2==2.7.7
