@@ -1,0 +1,12 @@
+language: python
+python:
+  - "3.5"
+  - "3.6"
+install:
+  - pip3 install -r requirements.txt
+env:
+  global:
+    - SECRET_KEY=key
+    - ALLOWED_HOSTS=*
+script:
+  - python3 manage.py test
