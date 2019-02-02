@@ -15,7 +15,7 @@ class GeolocationSerializer(gis_serializer.GeoFeatureModelSerializer):
         model = Geolocation
         fields = ("latitude", "longitude")
         geo_field = "coordinates"
-        read_only_field = "coordinates"
+        read_only_fields = ("coordinates",)
         write_only_fields = ("latitude", "longitude")
 
     def create(self, data):
