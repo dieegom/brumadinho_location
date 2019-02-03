@@ -26,6 +26,24 @@ class GeolocationSerializer(gis_serializer.GeoFeatureModelSerializer):
         )
         Geolocation.objects.create(**data)
         return data
+    
+    def update(self, location, data):
+
+        # geolocation = Geolocation.objects.get(id=location.id)
+
+        latitude = data.get('latitude')
+        longitude = data.get('longitude')
+
+        location.latitude = latitude
+        location.longitude = longitude
+
+        location.coordinates = Point(
+            longitude,
+            latitude
+        )
+
+        super(GeolocationSerializer, self).update(location, data)
+        return location
 
 class VisitedLocationSerializer(serializers.ModelSerializer):
     class Meta:
