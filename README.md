@@ -1,5 +1,7 @@
 # Brumadinho Location
 
+[![Build Status](https://travis-ci.org/sosbrumadinho/brumadinho_location.svg?branch=master)](https://travis-ci.org/sosbrumadinho/brumadinho_location)
+
 ## Important
 
 * If you're looking for the project to predict victims' location of
