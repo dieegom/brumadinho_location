@@ -1,20 +1,11 @@
 from django.db import models
-
+from django.contrib.gis.db import models as gis_models
 
 class Geolocation(models.Model):
 
-    class Meta:
-        unique_together = ['latitude', 'longitude']
-
+    coordinates = gis_models.PointField(null=True, blank=True)
     latitude = models.FloatField()
     longitude = models.FloatField()
-
-    def __str__(self):
-        return str("lat: {} long: {}".format(
-            self.latitude,
-            self.longitude
-        ))
-
 
 class VisitedLocation(models.Model):
 
